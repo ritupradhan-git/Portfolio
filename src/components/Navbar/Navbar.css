@@ -1,0 +1,36 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 170px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+    font-size: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none; 
+    color: inherit;      
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #FF8A00;
+}
+
+.nav-connect {
+    padding: 20px 40px;
+    border-radius: 50px;
+    background: linear-gradient(267deg, #FF8A00 0%, #E52E71 100%);
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.nav-connect:hover {
+    transform: scale(1.05);
+}
