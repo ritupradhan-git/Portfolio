@@ -17,7 +17,7 @@
     background: linear-gradient(267deg, #FF8A00 0%, #E52E71 100%);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent
+    -webkit-text-fill-color:transparent;
 }
 .hero p{
     width: 50%;
