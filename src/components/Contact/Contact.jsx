@@ -8,7 +8,7 @@ const Contact = () => {
     const linkedinURL="https://www.linkedin.com/in/rituparna-pradhan-6b67b821a";
     const githubURL="https://github.com/ritupradhan-git"
   return (
-    <div className='contact-container'>
+    <div id='contact' className='contact-container'>
         <h1>Contact Me</h1>
         <p>Feel free to reach out via any platforms below:</p>
         <div className="contact-cards">

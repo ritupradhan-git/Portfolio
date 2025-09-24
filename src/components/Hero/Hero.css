@@ -1,54 +1,98 @@
-.hero{
+.hero {
+    margin-top: 100px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 45px;
+}
+
+.hero img {
+    margin: 80px 0px 0 150px;
+    /* adjust only top/right/left if needed */
+    width: 550px;
+    height: auto;
+    padding: 20px;
+}
+
+.hero .right {
+    display: flex;
     flex-direction: column;
-    gap:  35px;
+    align-items: center;
+    margin: 100px 150px 0 0px;
+    gap: 30px;
 }
-.hero img{
-    margin-top: 150px;
-}
-.hero h1{
+
+.hero h1 {
     text-align: center;
-    width: 70%;
-    font-size: 90px;
+    width: 100%;
+    font-size: 32px;
     font-weight: 600;
 }
-.hero h1 span{
-    background: linear-gradient(267deg, #FF8A00 0%, #E52E71 100%);
+
+.hero h1 span {
+    background: linear-gradient(90deg, #ffab02 0%, #ffdc51 100%);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color:transparent;
+    -webkit-text-fill-color: transparent;
 }
-.hero p{
-    width: 50%;
+
+.hero p {
+    width: 100%;
     text-align: center;
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 0px;
+    font-weight: 500;
+    color: #62626a;
 }
-.hero-action{
+
+.hero-action {
     display: flex;
     align-items: center;
     gap: 25px;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500px;
     margin-bottom: 50px;
+    margin-top: 50px;
 }
-.hero-connect{
-    padding:25px 45px;
-    border-radius: 50px;
-    background: linear-gradient(267deg, #FF8A00 0%, #E52E71 100%);
-    cursor: pointer;
-}
-.hero-resume{
-    padding: 25px 75px;
-    border-radius: 50px;
-    border: 2px solid white;
-    cursor: pointer;
-}
-.hero-connect:hover{
-    border: 2px solid white;
 
-}.hero-resume:hover{
-    border-color: rgb(215, 77, 77);
-    
+.hero-connect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 45px;
+    border-radius: 50px;
+    background: linear-gradient(267deg, #6B46C1 0%, #b476fb 100%);
+    cursor: pointer;
+}
+
+.hero-connect:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+.hero-connect p {
+    color: white;
+}
+
+.hero-connect .arrow {
+    color: white;
+}
+
+.hero-resume {
+    padding: 20px 45px;
+    border-radius: 50px;
+    border: 3px solid #FACC15;
+    cursor: pointer;
+}
+
+.hero-connect:hover {
+    border: 2px solid #ffffff;
+
+}
+
+.hero-resume:hover {
+    background-color: #FEF3C7;
+    transform: scale(1.05);
+    transition: 0.3s ease;
 }
