@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.css';
-import logo from '../../assets/logo.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import logo from '../../assets/logo.svg';
 import menu_icon from '../../assets/menu_open.svg'
 import close_icon from '../../assets/menu_close.svg'
 import { faArrowUpRightDots } from '@fortawesome/free-solid-svg-icons';
@@ -59,15 +59,16 @@ const Navbar = () => {
                     </AnchorLink>
 
                 </li>
+                
                 <li>
-                    <AnchorLink className={`anchor-link ${menu === "services" ? 'active' : ''}`} offset={50} href='#services'>
-                        <p onClick={() => setMenu("services")}>Services</p>
+                    <AnchorLink className={`anchor-link ${menu === "work" ? 'active' : ''}`} offset={50} href='#work'>
+                        <p onClick={() => setMenu("work")}>Work</p>
                     </AnchorLink>
 
                 </li>
                 <li>
-                    <AnchorLink className={`anchor-link ${menu === "work" ? 'active' : ''}`} offset={50} href='#work'>
-                        <p onClick={() => setMenu("work")}>Work</p>
+                    <AnchorLink className={`anchor-link ${menu === "contact" ? 'active' : ''}`} offset={50} href='#contact'>
+                        <p onClick={() => setMenu("contact")}>Contact</p>
                     </AnchorLink>
 
                 </li>

@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   
-  background-color: #FACC15;
+  background-color: #ffd83b;
   /* White background for the main content area */
   border-radius: 150px 150px 0 0;
   /* Slightly rounded corners for the main container */
@@ -26,7 +26,7 @@
   position: relative;
   width: 100%;
 
-  background-color: #ffe88a;
+  background-color: #ffeda6;
   /* White background for the main content area */
   border-radius: 150px 150px 0 0;
   /* Slightly rounded corners for the main container */
@@ -64,7 +64,7 @@
 
 .contact-container .left  {
   margin-left: 150px;
-  margin-top: 25px;
+  margin-top: 5px;
   width: 30%;
   display: flex;
   flex-direction: column;

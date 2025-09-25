@@ -31,6 +31,8 @@
   font-weight: 500;
 }
 .navbar img{
+  margin-left: 150px;
+  margin-top: 20px;
     height: 50px;
     width: auto;
 }
