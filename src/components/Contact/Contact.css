@@ -1,79 +1,201 @@
+.outer-container {
+  position: relative;
+  width: 100%;
+  
+  background-color: #FACC15;
+  /* White background for the main content area */
+  border-radius: 150px 150px 0 0;
+  /* Slightly rounded corners for the main container */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  overflow: hidden;
+  /* Important for containing the pseudo-elements */
+  padding-top: 0px;
+  /* Add some padding inside the container */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /* Allows content to wrap on smaller screens */
+  box-sizing: border-box;
+  /* Include padding in the element's total width and height */
+  margin-top: 50px;
+  /* Space between contact section and footer */
+}
+.container {
+  position: relative;
+  width: 100%;
+
+  background-color: #ffe88a;
+  /* White background for the main content area */
+  border-radius: 150px 150px 0 0;
+  /* Slightly rounded corners for the main container */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  overflow: hidden;
+  /* Important for containing the pseudo-elements */
+  padding-top: 40px;
+  /* Add some padding inside the container */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  /* Allows content to wrap on smaller screens */
+  box-sizing: border-box;
+  /* Include padding in the element's total width and height */
+  margin-top: 50px;
+  /* Space between contact section and footer */
+
+}
+
 .contact-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 80px 20px;
-  background: #f9f9f9;
+  width: 100%;
+  justify-content: flex-start; /* align items from left */
+  align-items: flex-start; /* align to top */
+  padding: 60px 20px;
   text-align: center;
-  font-family: 'Arial', sans-serif;
+  background-color: transparent;
+  /* White background to match your theme */
+  color: #333333;
+  /* Dark text for readability on white */
+  gap: 20px;
 }
 
-.contact-container h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #3d628c;
+.contact-container .left  {
+  margin-left: 150px;
+  margin-top: 25px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* align text to top */
+  align-items: flex-start;
+  gap: 20px;
+
+}
+.contact-container .left  h1{
+  font-size: 50px;
   margin-bottom: 10px;
-}
+  color: #222222;
 
-.contact-container p {
-  font-size: 1.2rem;
-  margin-bottom: 50px;
-  color: #555;
+}
+.contact-container .left h1 span {
+  font-family: 'Edu NSW ACT Cursive', cursive;
+  color: #b476fb;
+  font-weight: 600;
+  display: inline-block;
+
 }
 
 .contact-cards {
+  width: 70%;
   display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .contact-card {
-  background: white;
-  padding: 30px 20px;
+  position: relative;
+  background-color: #ffffff;
   border-radius: 15px;
-  width: 250px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  padding: 30px;
+  width: 150px;
   text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #333333;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  /* Lift effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .contact-card svg {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 20px;
-  color: #3d628c;       /* Icon color */
+  color: #9353E1;
+  /* Purple icon color */
+  margin-bottom: 15px;
   transition: color 0.3s ease;
 }
 
 .contact-card:hover svg {
-  color: #FF8A00;       /* Change color on hover */
+  color: #9353E1;
+  /* Yellow icon color on hover */
 }
 
 .contact-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.8em;
   margin-bottom: 10px;
-  color: #29415d;
+  color: #333333;
+  font-weight: 600;
 }
 
 .contact-card p {
-  font-size: 1rem;
-  color: #666;
+  font-size: 1em;
+  color: #666666;
+  line-height: 1.5;
 }
 
-.contact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+.email-tooltip {
+  position: absolute;
+  top: 100%;
+  /* positions tooltip above the parent */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  user-select: text;
+  margin-top: 10px;
+  /* space above the parent element */
 }
 
-/* Responsive */
-@media (max-width: 800px) {
+.contact-card:hover .email-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .contact-cards {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+  }
+
+  .contact-card {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container h1 {
+    font-size: 2.5em;
+  }
+
+  .contact-container p {
+    font-size: 1em;
+  }
+
+  .contact-card {
+    padding: 20px;
+  }
+
+  .contact-card h3 {
+    font-size: 1.5em;
+  }
+
+  .contact-card p {
+    font-size: 0.9em;
   }
 }

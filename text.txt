@@ -1,0 +1,129 @@
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #ffffff; /* White background to match your theme */
+  color: #333333; /* Dark text for readability on white */
+  gap: 20px;
+}
+.contact-container .left{
+  margin-left: 150px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+}
+.contact-container .left h1 span{
+    font-family: 'Edu NSW ACT Cursive', cursive;
+    color:#b476fb;
+    font-weight: 600;
+  
+
+}
+.contact-cards {
+  width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 150px;
+    text-decoration: none;
+    color: #333333;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-card svg {
+    color: #9353E1; /* Purple icon color */
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.contact-card:hover svg {
+    color: #9353E1; /* Yellow icon color on hover */
+}
+
+.contact-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333333;
+    font-weight: 600;
+}
+
+.contact-card p {
+    font-size: 1em;
+    color: #666666;
+    line-height: 1.5;
+}
+.email-tooltip {
+    position: absolute;
+    top: 100%; /* positions tooltip above the parent */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
+    user-select: text;
+    margin-top: 10px; /* space above the parent element */
+}
+.contact-card:hover .email-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px);
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container h1 {
+        font-size: 2.5em;
+    }
+
+    .contact-container p {
+        font-size: 1em;
+    }
+
+    .contact-card {
+        padding: 20px;
+    }
+    .contact-card h3 {
+        font-size: 1.5em;
+    }
+    .contact-card p {
+        font-size: 0.9em;
+    }
+}

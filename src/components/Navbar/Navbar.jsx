@@ -71,22 +71,16 @@ const Navbar = () => {
                     </AnchorLink>
 
                 </li>
-                <li>
-                    <AnchorLink className={`anchor-link ${menu === "contact" ? 'active' : ''}`} offset={50} href='#contact'>
-                        <p onClick={() => setMenu("contact")}>Contact</p>
-                    </AnchorLink>
-
-                </li>
             </ul>
 
-            <div className='nav-connect'>
+            {/* <div className='nav-connect'>
                 <AnchorLink className='anchor-link' offset={50} href='#contact'>
                     <p onClick={() => setMenu("contact")}>Contact With Me</p>
                     <div className='arrow'>
                         <FontAwesomeIcon icon={faArrowUpRightDots} />
                     </div>
                 </AnchorLink>
-            </div>
+            </div> */}
         </div>
     );
 };

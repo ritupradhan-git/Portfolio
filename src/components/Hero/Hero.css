@@ -21,6 +21,15 @@
     margin: 100px 150px 0 0px;
     gap: 30px;
 }
+/* Remove underline from all anchor links */
+.anchor-link {
+    text-decoration: none; /* remove underline */
+    color: inherit;        /* keep color */
+}
+
+.anchor-link * {
+    text-decoration: none; /* remove underline from child elements */
+}
 
 .hero h1 {
     text-align: center;
@@ -64,6 +73,7 @@
     border-radius: 50px;
     background: linear-gradient(267deg, #6B46C1 0%, #b476fb 100%);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .hero-connect:hover {
@@ -73,6 +83,7 @@
 
 .hero-connect p {
     color: white;
+    text-decoration: none;
 }
 
 .hero-connect .arrow {

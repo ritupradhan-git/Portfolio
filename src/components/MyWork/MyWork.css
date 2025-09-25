@@ -1,56 +1,312 @@
-.mywork{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin-bottom: 80px 170px;
+.mywork {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  margin: 80px 170px;
 }
-.mywork-title{
-    position: relative;
+
+.mywork-title {
+  position: relative;
 }
-.mywork-title h1{
-    padding: 0 30px;
-    font-size: 80px;
-    font-weight: 600;
+
+.mywork-title h1 {
+  padding: 0px 30px;
+  font-size: 60px;
+  font-weight: 600;
 }
-.mywork-title img{
-    position: relative;
-    bottom: 0px;
-    right: 0px;
-    z-index: -1;
+
+.mywork-title h1 span {
+  font-family: 'Edu NSW ACT Cursive', cursive;
+  font-weight: 600;
+  color: #b476fb;
 }
-.mywork-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
+
+.mywork-title img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
-.mywork-container img{
-    box-sizing: border-box;
-    width: 419px;
-    height: 280px;
-    transition: 0.3s;
-    cursor: pointer;
+
+.mywork-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
-.mywork-container img:hover{
-    transform: scale(1.10);
-    border: 2px solid white;
-    border-radius: 10px;
-    transition: 0.3s;
+
+.category-card {
+  width: 350px;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.mywork-showmore{
-    display: flex;
-    gap: 15px;
-    border: 2px solid white;
-    padding: 30px 60px;
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+.category-card > * {
+  position: relative;
+  z-index: 2;
+}
+.category-name {
+  position: relative;
+  /* To be above the overlay */
+  z-index: 2;
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Project Card Styling (for the projects within a category) */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Dark background for project cards */
+}
+
+.project-card img {
+  width: 100%;
+  display: block;
+  border-radius: 10px 10px 0 0;
+  /* Rounded top corners */
+}
+
+.project-card p {
+  color: rgb(39, 39, 39);
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.mywork-showmore {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* space between text and arrow */
+  border-radius: 50px; /* pill-shaped button */
+  border: 3px solid rgb(255, 230, 0);
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  background-color: transparent;
+}
+
+.showmore-icon {
+  font-size: 20px; /* size of the icon */
+  transition: transform 0.4s ease;
+}
+
+.mywork-showmore:hover .showmore-icon {
+  transform: translateX(5px); /* slides arrow on hover */
+}
+
+.mywork-showmore:hover {
+  gap: 20px;
+  transform: translateY(-5px);
+  border-color: rgb(255, 230, 0);
+  background-color: rgb(255, 237, 78);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Modal Styling */
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  color: rgb(0, 0, 0);
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+  color: #f308ff;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.modal-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.modal-images img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.modal-content a {
+  display: inline-block;
+  background-color: #ffd000;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.modal-close-icon {
+  position: absolute;
+  top: 50px;
+  right: 25px;
+  font-size: 22px;
+  color: #000000;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-close-icon:hover {
+  color: #ff0000;
+  transform: scale(1.3);
+  transition: 0.6s ease;
+}
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 12px;            /* width of the vertical scrollbar */
+  height: 12px;           /* height of the horizontal scrollbar */
+}
+
+/* Scrollbar track (background) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;    /* track color */
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #6e6e6e;    /* thumb color */
+  border-radius: 10px;
+  border: 3px solid #f1f1f1; /* creates padding around thumb */
+}
+
+/* Scrollbar thumb hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #9b3edc;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .mywork {
+    gap: 60px;
+    margin: 50px 50px;
+  }
+
+  .mywork-title h1 {
+    font-size: 40px;
+    padding: 0 15px;
+  }
+
+  .mywork-container {
+    grid-template-columns: 1fr;
+    /* Stack cards on smaller screens */
+  }
+
+  .category-card,
+  .project-card {
+    width: 100%;
+    /* Full width on smaller screens */
+    height: 200px;
+  }
+
+  .mywork-showmore {
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+
+  .modal-content {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 28px;
+  }
+
+  .modal-content p {
+    font-size: 16px;
+  }
+
+  .modal-images {
+    grid-template-columns: 1fr;
+    /* Stack images in modal */
+  }
+}
+
+@media (max-width: 480px) {
+  .mywork {
+    margin: 30px 20px;
+  }
+
+  .mywork-title h1 {
+    font-size: 30px;
+  }
+
+  .category-name {
     font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 80px;
-    transition: 0.6s;
-    cursor: pointer;
-    border-radius: 50px;
-}
-.mywork-showmore:hover{
-    gap: 25px;
-    transition: 0.6s;
+  }
 }
