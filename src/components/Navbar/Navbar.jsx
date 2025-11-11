@@ -41,36 +41,44 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
+    const handleMenuClick=(section)=>{
+        setMenu(section);
+        setMenuOpen(false); //hide mobile menu on click
+    }
     return (
         <div className={`navbar ${blur ? 'blur' : ''}`}>
             <img src={logo} alt="Logo" />
+            {/* Hamburger Menu for Mobile */}
+            <img
+                src={menuOpen? close_icon : menu_icon}
+                alt="Menu"
+                className='hamburger'
+                onClick={()=> setMenuOpen(!menuOpen)}
+            />
 
-            <ul className='nav-menu'>
+            <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
                 <li>
-                    <AnchorLink className={`anchor-link ${menu === "home" ? 'active' : ''}`} href='#home'>
-                        <p onClick={() => setMenu("home")}>Home</p>
+                    <AnchorLink className="anchor-link" href='#home'>
+                        <p onClick={() => handleMenuClick("home")}>Home</p>
                     </AnchorLink>
-
                 </li>
-                <li>
-                    <AnchorLink className={`anchor-link ${menu === "about" ? 'active' : ''}`} offset={50} href='#about'>
-                        <p onClick={() => setMenu("about")}>About</p>
-                    </AnchorLink>
 
+                <li>
+                    <AnchorLink className="anchor-link" offset={50} href='#about'>
+                        <p onClick={() => handleMenuClick("about")}>About</p>
+                    </AnchorLink>
                 </li>
-                
-                <li>
-                    <AnchorLink className={`anchor-link ${menu === "work" ? 'active' : ''}`} offset={50} href='#work'>
-                        <p onClick={() => setMenu("work")}>Work</p>
-                    </AnchorLink>
 
+                <li>
+                    <AnchorLink className="anchor-link" offset={50} href='#work'>
+                        <p onClick={() => handleMenuClick("work")}>Work</p>
+                    </AnchorLink>
                 </li>
-                <li>
-                    <AnchorLink className={`anchor-link ${menu === "contact" ? 'active' : ''}`} offset={50} href='#contact'>
-                        <p onClick={() => setMenu("contact")}>Contact</p>
-                    </AnchorLink>
 
+                <li>
+                    <AnchorLink className="anchor-link" offset={50} href='#contact'>
+                        <p onClick={() => handleMenuClick("contact")}>Contact</p>
+                    </AnchorLink>
                 </li>
             </ul>
 

@@ -97,18 +97,54 @@
   border-radius: 10px 10px 0 0;
   /* Rounded top corners */
 }
+.project-card {
+  position: relative;
+}
 
 .project-card p {
-  color: rgb(39, 39, 39);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff; /* white text */
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 0 0 10px 10px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover p {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card p {
+  color: rgb(255, 255, 255);
   padding: 15px;
   font-size: 20px;
   font-weight: 700;
   text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover p{
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .mywork-showmore {
@@ -146,14 +182,14 @@
 
 
 
-/* Modal Styling */
+/* Project Modal Styling */
 .project-modal {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(99, 99, 99, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,18 +198,19 @@
 
 .modal-content {
   background: #ffffff;
-  padding: 30px;
+  padding: 25px;
   border-radius: 10px;
   max-width: 800px;
   max-height: 90vh;
   overflow-y: auto;
   color: rgb(0, 0, 0);
   position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
 }
 
 .modal-content h2 {
-  color: #f308ff;
+  text-align: center;
+  color: #f200ff;
   font-size: 36px;
   margin-bottom: 15px;
 }
