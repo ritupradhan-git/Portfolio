@@ -14,8 +14,7 @@ const Hero = () => {
         <div id='home' className='hero'>
             <img src={heroImage} alt="" />
             <div className="right">
-                <h1><span>I'm Rituparna Pradhan</span>, Web developer</h1>
-                <p>I am full stack developer.</p>
+                <h1>An aspiring <span>Full Stack Web Developer</span></h1>
                 <div className='hero-action'>
                     <div className="hero-connect">
                         <AnchorLink className='anchor-link' offset={50} href='#contact'>
